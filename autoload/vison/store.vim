@@ -52,7 +52,7 @@ function! s:type_handler.git.load(group_name, group_info)
   endif
   if !isdirectory(target_dir)
     echo '[vison] Clone '.a:group_info.url
-    let cmd = 'git clone '.a:group_info.url.' '.target_dir
+    let cmd = 'git clone --depth 1 '.a:group_info.url.' '.target_dir
     let output_list = systemlist(cmd)
   else
     echo '[vison] Update '.a:group_info.url
