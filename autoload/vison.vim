@@ -52,6 +52,7 @@ function! vison#switch_type(...)
     return
   endif
   let s:type_map[buf_name] = schemaname
+  let b:vison_schema = schemaname
   let b:is_cached_dict = 0
   setlocal omnifunc=vison#complete
 endfunction
